@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -58,6 +56,7 @@ return {
       -- first key is the mode
       n = {
         -- second key is the lefthand side of the map
+        ["<C-`>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
 
         -- navigate buffer tabs
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
@@ -79,6 +78,12 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+      },
+      t = {
+        ["<C-`>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+      },
+      i = {
+        ["<C-`>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
       },
     },
   },
